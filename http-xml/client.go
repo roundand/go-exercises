@@ -17,7 +17,7 @@ func main() {
   person := &Person{"John", 27}
   buf, _ := xml.Marshal(person)
   body := bytes.NewBuffer(buf)
-  r, _ := http.Post("http://localhost:8080", "text/xml", body)
+  r, _ := http.Post("http://localhost:8080", "application/xml", body)
   response, _ := ioutil.ReadAll(r.Body)
   defer r.Body.Close()
   fmt.Println(string(response))
